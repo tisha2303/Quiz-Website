@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            text-align: center;
+            font-family: cursive;
+        }
+
+        body {
+            background-color: rgb(153, 233, 242);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            margin-bottom: 10px;
+            transition: 0.5s;
+            color: darkmagenta;
+        }
+
+        .nav p:hover {
+            color: white;
+        }
+
+        .mainPic {
+            display: flex;
+            width: 70%;
+            margin: auto;
+            border-radius: 20px;
+           
+        }
+
+        .questions {
+            background-color: lightcoral;
+            color: aqua;
+            width: 500px;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: coral;
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        .sub {
+            margin: 10px;
+        }
+
+        h2 {
+            color: rgb(130, 13, 238)
+        }
+        .questions button.active{
+            color:blue;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <p><a href="C:\Users\tarun\Desktop\Java\VisualStudio\Final-project.html">Home</a></p>
+         <p><a href="C:\Users\tarun\Desktop\Java\VisualStudio\GenralQuiz.html">General Knowledge</a></p>
+         <p><a href="C:\Users\tarun\Desktop\Java\VisualStudio\mathQuestion.html">Math</a></p>
+         <p><a href="C:\Users\tarun\Desktop\Java\VisualStudio\scienceQuestion.html">Science</a></p>
+         <p><a href="C:\Users\tarun\Desktop\Java\VisualStudio\finalProject2.html">Question Bank</a></p>
+     </div>
+    <img class="mainPic"
+        src="https://media.istockphoto.com/id/2050489925/photo/blue-question-marks-background-faq-concept.jpg?s=612x612&w=0&k=20&c=it7mm2avbuxAdC6jPr2kpc26jr0yLu0L8E0UESn6CqY="
+        height="300px">
+    <h2><u>General Knowledge Questions</u></h2>
+    <div class="questions">
+        <p>How many minutes are in a full week?</p>
+        <button onclick="correct()">10,080 </button>
+        <button onclick="wrong()">15,963</button>
+
+        <p>What company was initially known as "Blue Ribbon Sports"?</p>
+        <button onclick="correct()">Nike</button>
+        <button onclick="wrong()">Addidas</button>
+
+        <p>What is the worlds largest retailer?</p>
+        <button onclick="wrong()">Addidas</button>
+        <button onclick="correct()">Walmart</button>
+
+        <p>What is the largest Spanish-speaking city in the world?</p>
+        <button onclick="correct()">Mexico City</button>
+        <button onclick="wrong()">Madrid</button>
+
+        <p>What is the main ingredient in guacamole?</p>
+        <button onclick="correct()">Avacado</button>
+        <button onclick="wrong()">Bell-Peppers</button>
+
+        <p>In the story of Snow White, how many dwarfs are there?</p>
+        <button onclick="wrong()">6</button>
+        <button onclick="correct()">7</button>
+
+        <p>Which planet is known as the “Blue Planet”?</p>
+        <button onclick="wrong()">Neptune</button>
+        <button onclick="correct()">Earth</button>
+
+        <p>Who painted the Mona Lisa?</p>
+        <button onclick="correct()">Leonardo da Vinci</button>
+        <button onclick="wrong()">Vincent van Gogh</button>
+
+        <p>What is the main ingredient in the dish sushi?</p>
+        <button onclick="correct()">Rice</button>
+        <button onclick="wrong()">Fish</button>
+
+        <p>What is the name of the largest ocean on Earth?</p>
+        <button onclick="wrong()"> Indian Ocean </button>
+        <button onclick="correct()">Pacific Ocean </button><br>
+        <button class="sub" onclick="sumbit()">Sumbit</button>
+        <p id="scoredisplay"></p>
+    </div>
+    <script>
+        let score = 0;
+        function wrong() {
+            if (score >= 0) {
+                score = score - 1;
+            }
+        }
+        function correct() {
+            score = score + 1;
+        }
+        function sumbit() {
+            document.getElementById("scoredisplay").innerHTML = "Score: " + score + "/10";
+        }
+
+    </script>
+</body>
+
+</html>

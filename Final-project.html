@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            font-family: cursive;
+            text-align: center;
+        }
+
+        body {
+
+            background: rgb(139, 252, 247);
+            background: radial-gradient(circle, rgba(139, 252, 247, 0.9220938375350141) 50%, rgba(255, 165, 165, 0.9585084033613446) 100%);
+        }
+
+        .questions {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .questions div {
+            width: 300px;
+            text-align: center;
+            background: rgb(252, 139, 139);
+            background: radial-gradient(circle, rgba(252, 139, 139, 0.9473039215686274) 50%, rgba(255, 217, 165, 0.9389005602240896) 100%);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .mainPic {
+            display: flex;
+            width: 70%;
+            margin: auto;
+            border-radius: 20px;
+        }
+
+        img {
+            border-radius: 10px;
+        }
+
+        .text {
+            color: purple;
+            text-align: center;
+        }
+
+        button {
+            background-color: plum;
+            color: darkturquoise;
+        }
+
+        #popup {
+            color: blue;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            margin-bottom: 10px;
+            transition: 0.5s;
+            color: darkmagenta;
+        }
+
+        .nav p:hover {
+            color: white;
+        }
+
+        footer {
+            background: rgb(252, 139, 139);
+            background: radial-gradient(circle, rgba(252, 139, 139, 0.9473039215686274) 50%, rgba(255, 217, 165, 0.9389005602240896) 100%);
+            margin-top: 10px;
+            padding: 10px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="nav">
+       <p><a href="C:\Users\tarun\Desktop\Java\VisualStudio\Final-project.html">Home</a></p>
+        <p><a href="C:\Users\tarun\Desktop\Java\VisualStudio\GenralQuiz.html">General Knowledge</a></p>
+        <p><a href="C:\Users\tarun\Desktop\Java\VisualStudio\mathQuestion.html">Math</a></p>
+        <p><a href="C:\Users\tarun\Desktop\Java\VisualStudio\scienceQuestion.html">Science</a></p>
+        <p><a href="C:\Users\tarun\Desktop\Java\VisualStudio\finalProject2.html">Question Bank</a></p>
+    </div>
+    <img class="mainPic"
+        src="https://media.istockphoto.com/id/2050489925/photo/blue-question-marks-background-faq-concept.jpg?s=612x612&w=0&k=20&c=it7mm2avbuxAdC6jPr2kpc26jr0yLu0L8E0UESn6CqY="
+        height="300px">
+    <p id="popup"></p>
+
+    <div class="questions">
+        <div class="GK">
+            <img src="https://www.shutterstock.com/image-vector/general-knowledge-school-kids-text-260nw-2001577211.jpg"
+                width="200px" height="100px">
+            <p class="text">Doing general knowledge questions is beneficial because it helps to broaden your
+                understanding across various subjects, improving your cognitive abilities, enhancing comprehension of
+                information you read, boosting confidence in social situations</p>
+            <a href="C:\Users\tarun\Desktop\Java\VisualStudio\GenralQuiz.html"><button>Take Quiz Now</button></a>
+        </div>
+        <div class="math"><img src="https://trivia.fyi/wp-content/uploads/2022/09/Math-Trivia.jpeg" width="200px"
+                height="100px">
+            <p class="text">Doing math knowledge questions is beneficial because it helps strengthen critical thinking,
+                problem-solving skills, analytical reasoning, and logical thinking, which are valuable skills applicable
+                to various aspects of life, not just mathematics</p>
+           <a href="C:\Users\tarun\Desktop\Java\VisualStudio\mathQuestion.html"><button>Take Quiz Now</button></a>
+        </div>
+        <div class="science">
+            <img src="https://img.freepik.com/free-vector/colorful-science-education-background_23-2148486110.jpg?w=360"
+                width="200px" height="100px">
+            <p class="text">Practicing science knowledge questions is beneficial because it helps solidify your
+                understanding of scientific concepts, promotes critical thinking skills, encourages curiosity, allows
+                you to identify gaps in your knowledge, and prepares you to apply scientific principles to real-world
+                situations, making informed decisions based on evidence</p>
+            <a href="C:\Users\tarun\Desktop\Java\VisualStudio\scienceQuestion.html"><button>Take Quiz Now</button></a>
+        </div>
+    </div>
+    <footer> © All Rights Reserved
+    </footer>
+    <script>
+        let person = prompt("Please enter your name to register", "ABC");
+        let text;
+        if (person == null || person == "") {
+            text = "User cancelled the prompt.";
+        } else {
+            text = "Welcome " + person + "! You are now registered.";
+        }
+        document.getElementById("popup").innerHTML = text;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            margin-bottom: 10px;
+            transition: 0.5s;
+            color: darkmagenta;
+        }
+
+        .nav:hover {
+            color: white;
+        }
+
+        
+        * {
+            text-align: center;
+            font-family: cursive;
+        }
+
+        #main {
+            background-color: lightcoral;
+            color: aqua;
+            width: 500px;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        #main button {
+            background-color: coral;
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+
+        body {
+            background-color: rgb(153, 233, 242);
+        }
+
+        #main button.selected {
+            background-color: rgb(176, 6, 176);
+            color: white;
+        }
+
+        .score {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        .mainPic {
+            display: flex;
+            width: 70%;
+            margin: auto;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="nav">
+            <p><a href="C:\Users\tarun\Desktop\Java\VisualStudio\Final-project.html">Home</a></p>
+             <p><a href="C:\Users\tarun\Desktop\Java\VisualStudio\GenralQuiz.html">General Knowledge</a></p>
+             <p><a href="C:\Users\tarun\Desktop\Java\VisualStudio\mathQuestion.html">Math</a></p>
+             <p><a href="C:\Users\tarun\Desktop\Java\VisualStudio\scienceQuestion.html">Science</a></p>
+             <p><a href="C:\Users\tarun\Desktop\Java\VisualStudio\finalProject2.html">Question Bank</a></p>
+         </div>
+        <img class="mainPic"
+            src="https://media.istockphoto.com/id/2050489925/photo/blue-question-marks-background-faq-concept.jpg?s=612x612&w=0&k=20&c=it7mm2avbuxAdC6jPr2kpc26jr0yLu0L8E0UESn6CqY="
+            height="300px">
+    </div>
+    <div id="main">
+        <div>
+            <h2>5 x 8</h2>
+            <button data-question-index="0" onclick="markAnswer(this, true, 0)">40</button>
+            <button data-question-index="0" onclick="markAnswer(this, false, 0)">45</button>
+            <br><br>
+
+            <h2>32/4</h2>
+            <button data-question-index="1" onclick="markAnswer(this, true, 1)">8</button>
+            <button data-question-index="1" onclick="markAnswer(this, false, 1)">10</button>
+            <br><br>
+
+            <h2>5+4+19+3</h2>
+            <button data-question-index="2" onclick="markAnswer(this, false, 2)">46</button>
+            <button data-question-index="2" onclick="markAnswer(this, true, 2)">31</button>
+            <br><br>
+
+            <h2>74-6+8</h2>
+            <button data-question-index="3" onclick="markAnswer(this, true, 3)">76</button>
+            <button data-question-index="3" onclick="markAnswer(this, false, 3)">91</button>
+            <br><br>
+
+            <h2>x +50=63</h2>
+            <button data-question-index="4" onclick="markAnswer(this, false, 4)">96</button>
+            <button data-question-index="4" onclick="markAnswer(this, true, 4)">13</button>
+            <br><br>
+            <h2>86-29</h2>
+            <button data-question-index="5" onclick="markAnswer(this, false, 5)">80</button>
+            <button data-question-index="5" onclick="markAnswer(this, true, 5)">57</button>
+            <br><br>
+            <h2>50/x=2</h2>
+            <button data-question-index="6" onclick="markAnswer(this, false, 6)">100</button>
+            <button data-question-index="6" onclick="markAnswer(this, true, 6)">25</button>
+            <br><br>
+            <h2>20+(90÷2)</h2>
+            <button data-question-index="7" onclick="markAnswer(this, false, 7)">26</button>
+            <button data-question-index="7" onclick="markAnswer(this, true, 7)">65</button>
+            <br><br>
+            <h2>2, 5, 8, 11, x</h2>
+            <button data-question-index="8" onclick="markAnswer(this, false, 8)">13</button>
+            <button data-question-index="8" onclick="markAnswer(this, true, 8)">14</button>
+            <br><br>
+            <h2>50-63</h2>
+            <button data-question-index="9" onclick="markAnswer(this, false, 9)">13</button>
+            <button data-question-index="9" onclick="markAnswer(this, true, 9)">-13</button>
+            <br><br>
+
+            <div class="score" id="score"></div>
+            <button id="submit" onclick="showScore()">Submit</button>
+            <p id="subm"></p>
+        </div>
+    </div>
+
+    <script>
+        let score = 0;
+        const totalQuestions = 5;
+
+        const answers = Array(totalQuestions).fill(null);
+
+        function markAnswer(button, isCorrect, questionIndex) {
+
+            const questionButtons = document.querySelectorAll(`button[data-question-index="${questionIndex}"]`);
+
+            for (let i = 0; i < questionButtons.length; i++) {
+                questionButtons[i].classList.remove('selected');
+            }
+
+            button.classList.add('selected');
+
+            answers[questionIndex] = isCorrect;
+            const allAnswered = answers.some(answer => answer === null);
+            document.getElementById('submit').disabled = !allAnswered;
+        }
+
+        function showScore() {
+            const allAnswered = answers.some(answer => answer === null);
+            if (!allAnswered) {
+                alert("Please answer all questions before submitting!");
+                return;
+            }
+
+            score = answers.filter(Boolean).length;
+
+
+            document.getElementById('subm').innerText = `Your Score: ${score}/${totalQuestions}`;
+        }
+    </script>
+</body>
+
+</html>
